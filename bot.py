@@ -61,6 +61,7 @@ def binarize(pixels):
 
 
 def cut(pixels, w, h):
+    print('in cut 1')
     line = []
     simb = []
     count = 0
@@ -86,7 +87,7 @@ def cut(pixels, w, h):
             # for j in range(w):
             #   pixels[i - 1, j] = 0
         count = 0
-
+    print('in cut 2')
     for a in range(len(line) // 2):
         tmp_1 = pixels[line[2 * a] - 1: line[2 * a + 1] + 1, 0: w]
         tmp_1 = np.reshape([tmp_1[i, j] for j in range(h) for i in range(w)], (h, w))
@@ -105,6 +106,7 @@ def cut(pixels, w, h):
             # filename = 'simb' + str(a) + '.' + str(i // 2) + '.png'
             # image.imsave(filename, tmp_2, vmin=0, vmax=255, cmap="gray", origin='upper')
             img_arr.append(tmp_2)
+    print('in cut 3')
     return img_arr
 
 
@@ -146,6 +148,7 @@ def handle_photo(message):
     elif chat_ids[id] == 2:
         img_arr = cut(pixels, w, h)
         for img in img_arr:
+            print('lol kek')
             bot.send_photo(id, img.tobytes())
     chat_ids.pop(id)
 
