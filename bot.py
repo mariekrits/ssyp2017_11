@@ -217,9 +217,9 @@ def handle_start_help(message):
 
 @server.route("/bot", methods=['POST'])
 def getMessage():
-    print("/bot")
     bot.process_new_updates([telebot.types.Update.de_json(request.stream.read().decode("utf-8"))])
     return "!", 200
+
 
 @server.route("/")
 def webhook():
