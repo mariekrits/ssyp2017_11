@@ -96,6 +96,7 @@ def cut(pixels, w, h):
         print(w, h)
         print(tmp_1.shape)
         tmp_1 = np.reshape([tmp_1[i, j] for j in range(h) for i in range(w)], (h, w))
+        print(tmp_1.shape)
         print('sleep' * 2)
         simb.clear()
         print('sleep' * 3)
