@@ -222,12 +222,8 @@ def getMessage():
     return "!", 200
 
 
-@server.route("/")
-def webhook():
-    bot.remove_webhook()
-    bot.set_webhook(url=config.HOST +"/bot")
-    return "!", 200
+bot.remove_webhook()
+bot.set_webhook(url=config.HOST +"/bot")
 
 server.run(host="0.0.0.0", port=os.environ.get('PORT', 5000))
 server = Flask(__name__)
-webhook()
