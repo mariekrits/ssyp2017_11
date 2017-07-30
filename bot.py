@@ -14,15 +14,22 @@ token = '431689751:AAH_sZLwpdsFV4KzdvPLw2REYqfPeTbPwU4'
 bot = telebot.TeleBot(token)
 server = Flask(__name__)
 
+# TODO: пофиксить хэндлеры
+# TODO: запилить поддержку нескольких пользователей
+# TODO: привести код к нормальному виду
+# TODO: склеить бота и распознавание
+# TODO: прихерачить сверху разрезание на символы
+# TODO: протестить
+# TODO: кайфовать
 
 # recognize_mode = False
 # cut_mode = False
 
 
-@bot.message_handler(commands=['start', 'help'])
+@bot.message_handler(commands=['start','help'])
 def handle_start_help(message):
     markup = types.ReplyKeyboardMarkup()
-    markup.row('cut', 'recognize', 'info')
+    markup.row('/cut', '/recognize', '/info')
 
     bot.send_message(message.chat.id, strings.start, reply_markup=markup)
 
