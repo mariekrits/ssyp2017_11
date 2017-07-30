@@ -91,10 +91,10 @@ def cut(pixels, w, h):
     for a in range(len(line) // 2):
         print('lol kek cheburek')
         h = line[2 * a + 1] - line[2 * a] + 1
-        tmp_1 = pixels[line[2 * a] - 1: line[2 * a + 1] + 1, 0: w]
+        tmp_1 = pixels[line[2 * a] - 1: line[2 * a + 1] + 1, :w]
         print('sleep')
         print(w, h)
-        print(tmp_1)
+        print(tmp_1.shape)
         tmp_1 = np.reshape([tmp_1[i, j] for j in range(h) for i in range(w)], (h, w))
         print('sleep' * 2)
         simb.clear()
