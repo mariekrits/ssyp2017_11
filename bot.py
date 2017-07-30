@@ -212,5 +212,5 @@ def handle_start_help(message):
     bot.send_message(message.chat.id, strings.mari_stats)
     bot.send_message(message.chat.id, strings.master_stats)
 
-
+bot.remove_webhook()
 bot.polling(none_stop=True)
