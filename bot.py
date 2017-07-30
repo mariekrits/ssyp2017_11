@@ -14,7 +14,7 @@ token = '431689751:AAH_sZLwpdsFV4KzdvPLw2REYqfPeTbPwU4'
 bot = telebot.TeleBot(token)
 server = Flask(__name__)
 
-WEBHOOK_HOST = 'https://ssyp.herokuapp.com/'
+WEBHOOK_HOST = 'https://ssyp.herokuapp.com'
 WEBHOOK_PORT = 8443  # 443, 80, 88 or 8443 (port need to be 'open')
 WEBHOOK_LISTEN = '0.0.0.0'  # In some VPS you may need to put here the IP addr
 
