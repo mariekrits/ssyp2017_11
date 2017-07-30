@@ -206,6 +206,7 @@ def handle_cutsimb(message):
 
 @bot.message_handler(commands=['info'])
 def handle_start_help(message):
+    print('lol')
     bot.send_message(message.chat.id, strings.alex_stats)
     bot.send_message(message.chat.id, strings.ghen_stats)
     bot.send_message(message.chat.id, strings.ilyag_stats)
