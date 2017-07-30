@@ -90,8 +90,8 @@ def cut(pixels, w, h):
     print('in cut 2')
     for a in range(len(line) // 2):
         print('lol kek cheburek')
-        h = line[2 * a + 1] - line[2 * a] + 1
-        tmp_1 = pixels[line[2 * a] - 1: line[2 * a + 1] + 1, :w]
+        h = line[2 * a + 1] - line[2 * a] + 2
+        tmp_1 = pixels[line[2 * a] - 1: line[2 * a + 1] + 1]
         print('sleep')
         print(w, h)
         print(tmp_1.shape)
