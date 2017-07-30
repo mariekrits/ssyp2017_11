@@ -93,6 +93,8 @@ def cut(pixels, w, h):
         h = line[2 * a + 1] - line[2 * a] + 1
         tmp_1 = pixels[line[2 * a] - 1: line[2 * a + 1] + 1, 0: w]
         print('sleep')
+        print(w, h)
+        print(tmp_1)
         tmp_1 = np.reshape([tmp_1[i, j] for j in range(h) for i in range(w)], (h, w))
         print('sleep' * 2)
         simb.clear()
