@@ -12,8 +12,8 @@ from flask import Flask, request
 
 token = '431689751:AAH_sZLwpdsFV4KzdvPLw2REYqfPeTbPwU4'
 bot = telebot.TeleBot(token)
+server = Flask(__name__)
 
-print(1)
 
 # recognize_mode = False
 # cut_mode = False
@@ -214,8 +214,20 @@ def handle_start_help(message):
     bot.send_message(message.chat.id, strings.mari_stats)
     bot.send_message(message.chat.id, strings.master_stats)
 
-print(2)
+
+@server.route("/bot", methods=['POST'])
+def getMessage():
+    print("/bot")
+    bot.process_new_updates([telebot.types.Update.de_json(request.stream.read().decode("utf-8"))])
+    return "!", 200
+
+@server.route("/")
+def webhook():
+    print("/")
+    bot.remove_webhook()
+    bot.set_webhook(url=config.HOST +"/bot")
+    return "!", 200
+
+server.run(host="0.0.0.0", port=os.environ.get('PORT', 5000))
 server = Flask(__name__)
-print(3)
-server.run(host="0.0.0.0", port=int(os.environ.get('PORT', '5000')))
-print(4)
+webhook()
