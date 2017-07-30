@@ -25,7 +25,7 @@ server = Flask(__name__)
 
 # modes: 0 - inactive, 1 - recognize mode, 2 - cut mode
 chat_ids = {}
-
+апапапав
 
 def binarize(pixels):
     hist = [0 for x in range(256)]
@@ -185,7 +185,7 @@ def handle_start_help(message):
     bot.send_message(message.chat.id, strings.mari_stats)
     bot.send_message(message.chat.id, strings.master_stats)
 
-
+'''
 @server.route("/bot", methods=['POST'])
 def getMessage():
     bot.process_new_updates([telebot.types.Update.de_json(request.stream.read().decode("utf-8"))])
@@ -197,3 +197,5 @@ bot.set_webhook(url=config.HOST + "/bot")
 
 server.run(host="0.0.0.0", port=os.environ.get('PORT', 5000))
 server = Flask(__name__)
+'''
+bot.polling()

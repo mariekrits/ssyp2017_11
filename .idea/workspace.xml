@@ -21,13 +21,13 @@
       <file leaf-file-name="bot.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bot.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="97" column="10" lean-forward="false" selection-start-line="97" selection-start-column="10" selection-end-line="97" selection-end-column="10" />
+            <state relative-caret-position="71">
+              <caret line="27" column="8" lean-forward="false" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="8" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
-                <element signature="e#686#1312#0" expanded="false" />
-                <element signature="e#3305#3822#0" expanded="false" />
-                <element signature="e#3910#4067#0" expanded="false" />
+                <element signature="e#694#1320#0" expanded="false" />
+                <element signature="e#3313#3830#0" expanded="false" />
+                <element signature="e#3918#4075#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -561,7 +561,14 @@
       <option name="project" value="LOCAL" />
       <updated>1501447363630</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="...">
+      <created>1501447491289</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1501447491289</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -801,13 +808,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bot.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="97" column="10" lean-forward="false" selection-start-line="97" selection-start-column="10" selection-end-line="97" selection-end-column="10" />
+        <state relative-caret-position="71">
+          <caret line="27" column="8" lean-forward="false" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="8" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
-            <element signature="e#686#1312#0" expanded="false" />
-            <element signature="e#3305#3822#0" expanded="false" />
-            <element signature="e#3910#4067#0" expanded="false" />
+            <element signature="e#694#1320#0" expanded="false" />
+            <element signature="e#3313#3830#0" expanded="false" />
+            <element signature="e#3918#4075#0" expanded="false" />
           </folding>
         </state>
       </provider>
