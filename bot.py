@@ -1,6 +1,5 @@
 import config
 import telebot
-import telebot
 from telebot import types
 from PIL import Image, ImageOps
 from matplotlib import image
@@ -8,6 +7,8 @@ import numpy as np
 import requests
 from io import BytesIO
 import strings
+import os
+from flask import Flask, request
 
 token = '431689751:AAH_sZLwpdsFV4KzdvPLw2REYqfPeTbPwU4'
 bot = telebot.TeleBot(token)
@@ -213,4 +214,6 @@ def handle_start_help(message):
     bot.send_message(message.chat.id, strings.master_stats)
 
 
-bot.polling(none_stop=True)
+server = Flask(__name__)
+server.run(host="0.0.0.0", port=os.environ.get('PORT', 5000))
+server = Flask(__name__)
