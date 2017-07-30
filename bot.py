@@ -13,6 +13,7 @@ from flask import Flask, request
 token = '431689751:AAH_sZLwpdsFV4KzdvPLw2REYqfPeTbPwU4'
 bot = telebot.TeleBot(token)
 
+print(1)
 
 # recognize_mode = False
 # cut_mode = False
@@ -213,6 +214,8 @@ def handle_start_help(message):
     bot.send_message(message.chat.id, strings.mari_stats)
     bot.send_message(message.chat.id, strings.master_stats)
 
-
+print(2)
 server = Flask(__name__)
+print(3)
 server.run(host="0.0.0.0", port=int(os.environ.get('PORT', '5000')))
+print(4)
