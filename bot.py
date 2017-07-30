@@ -15,6 +15,25 @@ bot = telebot.TeleBot(token)
 server = Flask(__name__)
 
 
+WEBHOOK_HOST = '<ip/host where the bot is running>'
+WEBHOOK_PORT = 8443  # 443, 80, 88 or 8443 (port need to be 'open')
+WEBHOOK_LISTEN = '0.0.0.0'  # In some VPS you may need to put here the IP addr
+
+WEBHOOK_SSL_CERT = './webhook_cert.pem'  # Path to the ssl certificate
+WEBHOOK_SSL_PRIV = './webhook_pkey.pem'  # Path to the ssl private key
+
+# Quick'n'dirty SSL certificate generation:
+#
+# openssl genrsa -out webhook_pkey.pem 2048
+# openssl req -new -x509 -days 3650 -key webhook_pkey.pem -out webhook_cert.pem
+#
+# When asked for "Common Name (e.g. server FQDN or YOUR name)" you should reply
+# with the same value in you put in WEBHOOK_HOST
+
+WEBHOOK_URL_BASE = "https://%s:%s" % (WEBHOOK_HOST, WEBHOOK_PORT)
+WEBHOOK_URL_PATH = "/%s/" % (token)
+
+
 # recognize_mode = False
 # cut_mode = False
 
@@ -216,19 +235,12 @@ def handle_start_help(message):
     bot.send_message(message.chat.id, strings.master_stats)
 
 
-@server.route("/bot", methods=['POST'])
-def getMessage():
-    bot.process_new_updates([telebot.types.Update.de_json(request.stream.read().decode("utf-8"))])
-    return "!", 200
+bot.remove_webhook()
 
+# Set webhook
+bot.set_webhook(url=WEBHOOK_URL_BASE+WEBHOOK_URL_PATH)
 
-@server.route("/")
-def webhook():
-    print("/")
-    bot.remove_webhook()
-    bot.set_webhook(url=config.HOST +"/bot")
-    return "!", 200
-
-server.run(host="0.0.0.0", port=os.environ.get('PORT', 5000))
-server = Flask(__name__)
-webhook()
+# Start flask server
+server.run(host=WEBHOOK_LISTEN,
+        port=WEBHOOK_PORT,
+        debug=True)
