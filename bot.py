@@ -66,7 +66,7 @@ def cut(pixels, w, h):
     count = 0
     count1 = 0
 
-    filenames_arr = []  # array of cut symbols
+    img_arr = []  # array of cut symbols
 
     for i in range(h):
         for j in range(w):
@@ -87,14 +87,8 @@ def cut(pixels, w, h):
             #   pixels[i - 1, j] = 0
         count = 0
 
-    for i in range(0, len(line), 2):
-        tmp_1 = pixels[line[i] - 1: line[i + 1] + 1, 0: w]
-        image.imsave('line' + str(i // 2) + '.png', tmp_1, vmin=0, vmax=255, cmap="gray", origin='upper')
-    print('line=', len(simb))
     for a in range(len(line) // 2):
-        img = Image.open('line' + str(a) + '.png').convert('L')
-        w, h = img.size
-        tmp_1 = img.load()
+        tmp_1 = pixels[line[2 * a] - 1: line[2 * a + 1] + 1, 0: w]
         tmp_1 = np.reshape([tmp_1[i, j] for j in range(h) for i in range(w)], (h, w))
         simb.clear()
         for j in range(w):
@@ -108,10 +102,10 @@ def cut(pixels, w, h):
             count = 0
         for i in range(0, len(simb), 2):
             tmp_2 = tmp_1[0: h, simb[i] - 1: simb[i + 1] + 2]
-            filename = 'simb' + str(a) + '.' + str(i // 2) + '.png'
-            image.imsave(filename, tmp_2, vmin=0, vmax=255, cmap="gray", origin='upper')
-            filenames_arr.append(filename)
-    return filenames_arr
+            # filename = 'simb' + str(a) + '.' + str(i // 2) + '.png'
+            # image.imsave(filename, tmp_2, vmin=0, vmax=255, cmap="gray", origin='upper')
+            img_arr.append(tmp_2)
+    return img_arr
 
 
 def extract_image_from_message(message):
@@ -140,7 +134,7 @@ def handle_start_help(message):
 
 
 @bot.message_handler(content_types=['photo'])
-def handle_photo_cut(message):
+def handle_photo(message):
     id = message.chat.id
     if id not in chat_ids or chat_ids[id] == 0:
         return
@@ -150,10 +144,9 @@ def handle_photo_cut(message):
     if chat_ids[id] == 1:
         bot.send_message(id, 'как раз')
     elif chat_ids[id] == 2:
-        filenames_arr = cut(pixels, w, h)
-        for filename in filenames_arr:
-            bot.send_photo(id, open(filename, 'rb'))
-            os.remove(filename)
+        img_arr = cut(pixels, w, h)
+        for img in img_arr:
+            bot.send_photo(id, img.tobytes())
     chat_ids.pop(id)
 
 
