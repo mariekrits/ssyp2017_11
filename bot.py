@@ -215,5 +215,4 @@ def handle_start_help(message):
 
 
 server = Flask(__name__)
-server.run(host="0.0.0.0", port=os.environ.get('PORT', 5000))
-server = Flask(__name__)
+server.run(host="0.0.0.0", port=443)
