@@ -22,12 +22,12 @@
         <entry file="file://$PROJECT_DIR$/bot.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="316">
-              <caret line="111" column="18" lean-forward="true" selection-start-line="111" selection-start-column="18" selection-end-line="111" selection-end-column="18" />
+              <caret line="95" column="26" lean-forward="true" selection-start-line="95" selection-start-column="26" selection-end-line="95" selection-end-column="26" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
                 <element signature="e#686#1312#0" expanded="false" />
-                <element signature="e#3081#3598#0" expanded="false" />
-                <element signature="e#3686#3843#0" expanded="false" />
+                <element signature="e#3189#3706#0" expanded="false" />
+                <element signature="e#3794#3951#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -512,7 +512,14 @@
       <option name="project" value="LOCAL" />
       <updated>1501430522764</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="...">
+      <created>1501430972583</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1501430972583</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -753,12 +760,12 @@
     <entry file="file://$PROJECT_DIR$/bot.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="316">
-          <caret line="111" column="18" lean-forward="true" selection-start-line="111" selection-start-column="18" selection-end-line="111" selection-end-column="18" />
+          <caret line="95" column="26" lean-forward="true" selection-start-line="95" selection-start-column="26" selection-end-line="95" selection-end-column="26" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
             <element signature="e#686#1312#0" expanded="false" />
-            <element signature="e#3081#3598#0" expanded="false" />
-            <element signature="e#3686#3843#0" expanded="false" />
+            <element signature="e#3189#3706#0" expanded="false" />
+            <element signature="e#3794#3951#0" expanded="false" />
           </folding>
         </state>
       </provider>

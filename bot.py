@@ -91,9 +91,13 @@ def cut(pixels, w, h):
     for a in range(len(line) // 2):
         print('lol kek cheburek')
         tmp_1 = pixels[line[2 * a] - 1: line[2 * a + 1] + 1, 0: w]
+        print('sleep')
         tmp_1 = np.reshape([tmp_1[i, j] for j in range(h) for i in range(w)], (h, w))
+        print('sleep' * 2)
         simb.clear()
+        print('sleep' * 3)
         for j in range(w):
+            print('sleep' * 4)
             for i in range(h):
                 if tmp_1[i, j] == 0:
                     count += 1
