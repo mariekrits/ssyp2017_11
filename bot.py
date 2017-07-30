@@ -22,7 +22,7 @@ server = Flask(__name__)
 @bot.message_handler(commands=['start', 'help'])
 def handle_start_help(message):
     markup = types.ReplyKeyboardMarkup()
-    markup.row('/cut', '/recognize', '/info')
+    markup.row('cut', 'recognize', 'info')
 
     bot.send_message(message.chat.id, strings.start, reply_markup=markup)
 
@@ -215,9 +215,9 @@ def handle_start_help(message):
     bot.send_message(message.chat.id, strings.master_stats)
 
 
+
 @server.route("/bot", methods=['POST'])
 def getMessage():
-    print("/bot")
     bot.process_new_updates([telebot.types.Update.de_json(request.stream.read().decode("utf-8"))])
     return "!", 200
 
