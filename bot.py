@@ -89,6 +89,7 @@ def cut(pixels, w, h):
         count = 0
     print('in cut 2')
     for a in range(len(line) // 2):
+        print('lol kek cheburek')
         tmp_1 = pixels[line[2 * a] - 1: line[2 * a + 1] + 1, 0: w]
         tmp_1 = np.reshape([tmp_1[i, j] for j in range(h) for i in range(w)], (h, w))
         simb.clear()
@@ -102,6 +103,7 @@ def cut(pixels, w, h):
                 simb.append(j - 1)
             count = 0
         for i in range(0, len(simb), 2):
+            print('lol kek cheburek 2')
             tmp_2 = tmp_1[0: h, simb[i] - 1: simb[i + 1] + 2]
             # filename = 'simb' + str(a) + '.' + str(i // 2) + '.png'
             # image.imsave(filename, tmp_2, vmin=0, vmax=255, cmap="gray", origin='upper')
