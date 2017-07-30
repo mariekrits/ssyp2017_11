@@ -7,30 +7,10 @@ import numpy as np
 import requests
 from io import BytesIO
 import strings
-import os
-from flask import Flask, request
+
 
 token = '431689751:AAH_sZLwpdsFV4KzdvPLw2REYqfPeTbPwU4'
 bot = telebot.TeleBot(token)
-server = Flask(__name__)
-
-WEBHOOK_HOST = 'ssyp.herokuapp.com'
-WEBHOOK_PORT = 8443  # 443, 80, 88 or 8443 (port need to be 'open')
-WEBHOOK_LISTEN = '0.0.0.0'  # In some VPS you may need to put here the IP addr
-
-WEBHOOK_SSL_CERT = './webhook_cert.pem'  # Path to the ssl certificate
-WEBHOOK_SSL_PRIV = './webhook_pkey.pem'  # Path to the ssl private key
-
-# Quick'n'dirty SSL certificate generation:
-#
-# openssl genrsa -out webhook_pkey.pem 2048
-# openssl req -new -x509 -days 3650 -key webhook_pkey.pem -out webhook_cert.pem
-#
-# When asked for "Common Name (e.g. server FQDN or YOUR name)" you should reply
-# with the same value in you put in WEBHOOK_HOST
-
-WEBHOOK_URL_BASE = "https://%s:%s" % (WEBHOOK_HOST, WEBHOOK_PORT)
-WEBHOOK_URL_PATH = "/%s/" % (token)
 
 
 # recognize_mode = False
@@ -224,7 +204,6 @@ def handle_cutsimb(message):
 
 @bot.message_handler(commands=['info'])
 def handle_start_help(message):
-    print('lol')
     bot.send_message(message.chat.id, strings.alex_stats)
     bot.send_message(message.chat.id, strings.ghen_stats)
     bot.send_message(message.chat.id, strings.ilyag_stats)
@@ -234,12 +213,4 @@ def handle_start_help(message):
     bot.send_message(message.chat.id, strings.master_stats)
 
 
-bot.remove_webhook()
-
-# Set webhook
-bot.set_webhook(url=WEBHOOK_URL_BASE + WEBHOOK_URL_PATH)
-
-# Start flask server
-server.run(host=WEBHOOK_LISTEN,
-           port=WEBHOOK_PORT,
-           debug=True)
+bot.polling(none_stop=True)
