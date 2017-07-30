@@ -12,11 +12,12 @@ import strings
 token = '431689751:AAH_sZLwpdsFV4KzdvPLw2REYqfPeTbPwU4'
 bot = telebot.TeleBot(token)
 
+
 # recognize_mode = False
 # cut_mode = False
 
 
-@bot.message_handler(commands=['start','help'])
+@bot.message_handler(commands=['start', 'help'])
 def handle_start_help(message):
     markup = types.ReplyKeyboardMarkup()
     markup.row('/cut', '/recognize', '/info')
@@ -25,9 +26,10 @@ def handle_start_help(message):
 
 
 @bot.message_handler(commands=['cut'])
-def handle_cutsimb (message):
+def handle_cutsimb(message):
     # global cut_mode
     bot.send_message(message.chat.id, "Отправьте фото.")
+
     # cut_mode = True
 
     @bot.message_handler(content_types=['photo'])
@@ -131,14 +133,16 @@ def handle_cutsimb (message):
             print(simb)
             for i in range(0, len(simb), 2):
                 tmp_2 = tmp_1[0: h, simb[i] - 1: simb[i + 1] + 2]
-                image.imsave('simb' + str(a) + '.' + str(i//2) + '.png', tmp_2, vmin=0, vmax=255, cmap="gray", origin='upper')
-                bot.send_photo(message.chat.id, open('simb' + str(a) + '.' + str(i//2) + '.png', 'rb'))
+                image.imsave('simb' + str(a) + '.' + str(i // 2) + '.png', tmp_2, vmin=0, vmax=255, cmap="gray",
+                             origin='upper')
+                bot.send_photo(message.chat.id, open('simb' + str(a) + '.' + str(i // 2) + '.png', 'rb'))
 
 
 @bot.message_handler(commands=['recognize'])
-def handle_cutsimb (message) :
+def handle_cutsimb(message):
     # global recognize_mode
     bot.send_message(message.chat.id, "Отправьте фото.")
+
     # recognize_mode = True
 
     @bot.message_handler(content_types=['photo'])
@@ -197,6 +201,7 @@ def handle_cutsimb (message) :
 
         bot.send_message(message.chat.id, 'На картинке символ " ".')
 
+
 @bot.message_handler(commands=['info'])
 def handle_start_help(message):
     bot.send_message(message.chat.id, strings.alex_stats)
@@ -206,5 +211,6 @@ def handle_start_help(message):
     bot.send_message(message.chat.id, strings.max_stats)
     bot.send_message(message.chat.id, strings.mari_stats)
     bot.send_message(message.chat.id, strings.master_stats)
+
 
 bot.polling(none_stop=True)
