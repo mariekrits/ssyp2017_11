@@ -8,6 +8,7 @@ import requests
 from io import BytesIO
 import strings
 import os
+import main
 from flask import Flask, request
 
 token = '431689751:AAH_sZLwpdsFV4KzdvPLw2REYqfPeTbPwU4'
@@ -25,7 +26,12 @@ server = Flask(__name__)
 
 # modes: 0 - inactive, 1 - recognize mode, 2 - cut mode
 chat_ids = {}
-апапапав
+bot.remove_webhook()
+
+
+def save_img(filename, arr):
+    image.imsave(filename, arr, vmin=0, vmax=255, cmap="gray", origin='upper')
+
 
 def binarize(pixels):
     hist = [0 for x in range(256)]
@@ -61,7 +67,6 @@ def binarize(pixels):
 
 
 def cut(pixels, w, h):
-    print('in cut 1')
     line = []
     simb = []
     count = 0
@@ -69,6 +74,8 @@ def cut(pixels, w, h):
 
     img_arr = []  # array of cut symbols
 
+    pixels = np.lib.pad(pixels, (100, 100), mode='constant', constant_values=(255, 255))
+    h, w = pixels.shape
     for i in range(h):
         for j in range(w):
             if pixels[i, j] == 0:
@@ -77,7 +84,7 @@ def cut(pixels, w, h):
             line.append(i)
             # for j in range(w):
             #    pixels[i, j] = 0
-        elif count == 0 and len(line) % 2 != 0 or count == w and len(line) % 2 != 0:
+        elif (count == 0 or count == w) and len(line) % 2 != 0:
             for j in range(w):
                 if pixels[i - 1, j] == 0:
                     count1 += 1
@@ -87,21 +94,13 @@ def cut(pixels, w, h):
             # for j in range(w):
             #   pixels[i - 1, j] = 0
         count = 0
-    print('in cut 2')
+
     for a in range(len(line) // 2):
-        print('lol kek cheburek')
         h = line[2 * a + 1] - line[2 * a] + 2
         tmp_1 = pixels[line[2 * a] - 1: line[2 * a + 1] + 1]
-        print('sleep')
-        print(w, h)
-        print(tmp_1.shape)
         # tmp_1 = np.reshape([tmp_1[i, j] for j in range(h) for i in range(w)], (h, w))
-        print(tmp_1.shape)
-        print('sleep' * 2)
         simb.clear()
-        print('sleep' * 3)
         for j in range(w):
-            print('sleep' * 4)
             for i in range(h):
                 if tmp_1[i, j] == 0:
                     count += 1
@@ -111,12 +110,11 @@ def cut(pixels, w, h):
                 simb.append(j - 1)
             count = 0
         for i in range(0, len(simb), 2):
-            print('lol kek cheburek 2')
             tmp_2 = tmp_1[0: h, simb[i] - 1: simb[i + 1] + 2]
-            # filename = 'simb' + str(a) + '.' + str(i // 2) + '.png'
-            # image.imsave(filename, tmp_2, vmin=0, vmax=255, cmap="gray", origin='upper')
+            tmp_2 = np.lib.pad(tmp_2, (5, 5), mode='constant', constant_values=(255, 255))
+            filename = 'simb' + str(a) + '.' + str(i // 2) + '.png'
+            image.imsave(filename, tmp_2, vmin=0, vmax=255, cmap="gray", origin='upper')
             img_arr.append(tmp_2)
-    print('in cut 3')
     return img_arr
 
 
@@ -140,7 +138,11 @@ def extract_image_from_message(message):
 @bot.message_handler(commands=['start', 'help'])
 def handle_start_help(message):
     markup = types.ReplyKeyboardMarkup()
-    markup.row('/cut', '/recognize', '/info')
+    markup = types.ReplyKeyboardMarkup(row_width=1)
+    itembtn1 = types.KeyboardButton('/cut')
+    itembtn2 = types.KeyboardButton('/recognize')
+    itembtn3 = types.KeyboardButton('/info')
+    markup.add(itembtn1, itembtn2, itembtn3)
 
     bot.send_message(message.chat.id, strings.start, reply_markup=markup)
 
@@ -152,14 +154,16 @@ def handle_photo(message):
         return
     bot.send_message(message.chat.id, "Подождите...")
     w, h, img = extract_image_from_message(message)
+    references = main.calculateSamples(True)
     pixels = binarize(np.array(img))
     if chat_ids[id] == 1:
-        bot.send_message(id, 'как раз')
+        symbol = main.Comparison.compareWithReferences(main.processImage(pixels), references)
+        bot.send_message(id, 'Это символ ' + str(symbol))
     elif chat_ids[id] == 2:
         img_arr = cut(pixels, w, h)
         for img in img_arr:
-            print('lol kek')
-            bot.send_photo(id, img.tobytes())
+            symbol = main.Comparison.compareWithReferences(main.processImage(img), references)
+            bot.send_message(id, 'Это символ ' + str(symbol))
     chat_ids.pop(id)
 
 
