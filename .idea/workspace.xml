@@ -1,71 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0aeb22f9-2321-4dd7-84d9-de086babdcfa" name="Default" comment="...">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/debug228.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/icon.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/0_1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/1_1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/2_1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/3_1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/4_1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/5_1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/6_1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/7_1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/8_1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/9_1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sample_vector" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/samples/1/271.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/samples/1/553.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/samples/1/619.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/samples/1/979.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/samples/2/361.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/samples/2/9130.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/samples/2/939.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/samples/3/236.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/samples/3/2787.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/samples/3/2821.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/samples/3/362.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/samples/3/4002.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/samples/4/3241.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/samples/4/3839.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/samples/4/4738.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simb0.0.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simb2.0.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simb2.1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/working_example.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Binarization.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Comparison.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Drawing.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Ellipse.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FeatureExtraction.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/GUI.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/GraphUtils.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Measures.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MyEllipsis.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Sceletonization.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Utils.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libImage.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main.ui" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/main2.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/symcutter.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/line.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/line0.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/line1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/simb.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/simb0.2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/simb0.3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/simb0.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/simb1.2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/simb1.3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/simb1.png" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simb1.0.png" afterPath="$PROJECT_DIR$/simb1.0.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simb1.1.png" afterPath="$PROJECT_DIR$/simb1.1.png" />
+    <list default="true" id="0aeb22f9-2321-4dd7-84d9-de086babdcfa" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bot.py" afterPath="$PROJECT_DIR$/bot.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/strings.py" afterPath="$PROJECT_DIR$/strings.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/requirements.txt" afterPath="$PROJECT_DIR$/requirements.txt" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -94,7 +32,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="util.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="util.py" pinned="false" current-in-tab="false">
         <entry file="file://C:/ProgramData/Anaconda3/Lib/site-packages/telebot/util.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="191">
@@ -115,6 +53,16 @@
         <entry file="file://$PROJECT_DIR$/simb1.0.png">
           <provider selected="true" editor-type-id="images">
             <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="requirements.txt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/requirements.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="14" column="14" lean-forward="true" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
+              <folding />
+            </state>
           </provider>
         </entry>
       </file>
@@ -194,12 +142,12 @@
         <option value="$PROJECT_DIR$/app.json" />
         <option value="$PROJECT_DIR$/Procfile" />
         <option value="$PROJECT_DIR$/runtime.txt" />
-        <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/config.py" />
         <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/strings.py" />
         <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/bot.py" />
+        <option value="$PROJECT_DIR$/requirements.txt" />
       </list>
     </option>
   </component>
@@ -244,7 +192,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../MasterProject" />
   </component>
   <component name="RunDashboard">
@@ -621,7 +569,21 @@
       <option name="project" value="LOCAL" />
       <updated>1501448826236</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="why so much shitcode">
+      <created>1501481771435</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1501481771435</updated>
+    </task>
+    <task id="LOCAL-00036" summary="why so much shitcode">
+      <created>1501482503395</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1501482503395</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -689,7 +651,8 @@
     <MESSAGE value="Дальше будет много ничего не значащих коммитов, прошу меня извинить, просто бота на хероку удобно обновлять через гитхаб" />
     <MESSAGE value="Well, guys, just lets do this shit" />
     <MESSAGE value="..." />
-    <option name="LAST_COMMIT_MESSAGE" value="..." />
+    <MESSAGE value="why so much shitcode" />
+    <option name="LAST_COMMIT_MESSAGE" value="why so much shitcode" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -842,14 +805,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/requirements.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -991,6 +946,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="191">
           <caret line="57" column="24" lean-forward="true" selection-start-line="57" selection-start-column="24" selection-end-line="57" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="14" lean-forward="true" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
           <folding />
         </state>
       </provider>
