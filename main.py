@@ -10,8 +10,8 @@ import os
 import pickle
 import numpy as np
 from MyEllipsis import *
-from Drawing import *
-from matplotlib import image
+# from Drawing import *
+# from matplotlib import image
 
 sys.setrecursionlimit(100000)
 
