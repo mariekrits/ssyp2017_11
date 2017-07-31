@@ -34,7 +34,6 @@ ply==3.10
 prompt-toolkit==1.0.14
 psutil==5.2.2
 py==1.4.33
-pycosat==0.6.2
 pycparser==2.17
 pycrypto==2.6.1
 pycurl==7.43.0
